@@ -1,12 +1,19 @@
 server:
   port: 8021
 spring:
-  #����Ŀ��������
+  #给项目来个名字
   application:
     name: rabbitmq-provider
-  #����rabbitMq ������
+  #配置rabbitMq 服务器
   rabbitmq:
     host: 192.168.3.21
     port: 5672
     username: admin
     password: 123456
+
+    #消息确认配置项
+
+    #确认消息已发送到交换机(Exchange) 选择确认类型为交互
+    publisher-confirm-type: correlated
+    #确认消息已发送到队列(Queue)
+    publisher-returns: true
